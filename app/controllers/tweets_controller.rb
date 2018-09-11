@@ -31,10 +31,13 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets/:id' do
-    raise params.inspect
     @tweet = Tweet.find(params[:id])
    if logged_in? && @tweet.user_id == current_user.id
-     @tweet.update(content: => params([:tweet]["content"])
+     params[:campsite].each do |k,v|
+       if !v.empty?
+         @campsite.update_attributes(k => v)
+       end
+     end
      @campsite.save
      redirect '/users/home'
    else
