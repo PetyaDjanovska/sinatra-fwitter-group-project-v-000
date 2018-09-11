@@ -33,12 +33,12 @@ class TweetsController < ApplicationController
   post '/tweets/:id' do
     @tweet = Tweet.find(params[:id])
    if logged_in? && @tweet.user_id == current_user.id
-     params[:campsite].each do |k,v|
+     params[:tweet].each do |k,v|
        if !v.empty?
-         @campsite.update_attributes(k => v)
+         @tweet.update_attributes(k => v)
        end
      end
-     @campsite.save
+     @tweet.save
      redirect '/users/home'
    else
      redirect '/users/home'
