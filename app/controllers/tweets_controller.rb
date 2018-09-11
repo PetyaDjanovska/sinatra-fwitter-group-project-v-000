@@ -29,4 +29,8 @@ class TweetsController < ApplicationController
       redirect '/tweets'
     end
   end
+
+  post '/tweets/:id' do
+    
+  end
 end
