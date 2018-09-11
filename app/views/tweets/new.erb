@@ -5,21 +5,6 @@
 		</label>
 	</p>
 
-	<p>
-		<label for "campsite[address]">Campsite address:</label>
-		<input type="text" name="campsite[address]">
-		</label>
-	</p>
-
-	<p>
-		<label for "campsite[rating]">Campsite rating:</label></br>
-		<% (1..5).each do |r|%>
-		<input type="checkbox" name="campsite[rating]" value="<%=r%>"><%= r %></br>
-		<% end %>
-	</p>
-
 	<button type='submit' value='create'>Create</button>
-
-
 
 </form>
