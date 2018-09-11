@@ -8,6 +8,8 @@ class TweetsController < ApplicationController
     if logged_in?
       @tweet = Tweet.new(params[:tweet])
       @tweet.user_id = current_user.id
+      @tweet.save
+      redirect_to '/tweets'
     end
   end
 
