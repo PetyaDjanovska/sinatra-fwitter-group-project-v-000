@@ -10,6 +10,8 @@ class TweetsController < ApplicationController
       @tweet.user_id = current_user.id
       @tweet.save
       redirect_to '/tweets/:id'
+    else
+      redirect_to '/'
     end
   end
 
