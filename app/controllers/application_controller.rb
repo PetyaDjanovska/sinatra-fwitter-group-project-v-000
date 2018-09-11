@@ -9,4 +9,20 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "some very secret word"
   end
 
+  get "/" do
+    erb :welcome
+  end
+
+
+  # Helper methods
+  helpers do
+    def current_user
+      @user ||= User.find(session[:id])
+    end
+
+    def logged_in?
+      !!session[:id]
+    end
+   end
+
 end
