@@ -33,7 +33,7 @@ class TweetsController < ApplicationController
   post '/tweets/:id' do
     @tweet = Tweet.find(params[:id])
    if logged_in? && @tweet.user_id == current_user.id
-     @tweet.update(content: => params[:tweet]["content"])
+     @tweet.update(content: => params([:tweet]["content"])
      @campsite.save
      redirect '/users/home'
    else
