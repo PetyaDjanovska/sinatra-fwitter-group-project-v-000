@@ -1,0 +1,25 @@
+<form action="/tweets/<%= @tweet.id %>" method="post">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <p>
+		<label for "tweet[content]">Tweet content:</label>
+		<input type="text" name="campsite[name]" placeholder="<%= @campsite.name %>">
+		</label>
+	</p>
+
+	<p>
+		<label for "campsite[address]">Campsite address:</label>
+		<input type="text" name="campsite[address]" placeholder="<%= @campsite.address %>">
+		</label>
+	</p>
+
+	<p>
+		<label for "campsite[rating]">Campsite rating: <%= @campsite.rating%></label></br>
+		<p>
+		<% (1..5).each do |r|%>
+		<input type="checkbox" name="campsite[rating]" value="<%=r%>"><%= r %></br>
+		<% end %>
+		</p>
+	</p>
+
+	<button type='submit' value='create'>UPDATE</button>
+</form>
