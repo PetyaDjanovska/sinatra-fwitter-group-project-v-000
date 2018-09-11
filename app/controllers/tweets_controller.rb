@@ -4,4 +4,9 @@ class TweetsController < ApplicationController
     erb :'tweets/new'
   end
 
+  post '/tweets' do
+    @user = current_user
+
+  end
+
 end
