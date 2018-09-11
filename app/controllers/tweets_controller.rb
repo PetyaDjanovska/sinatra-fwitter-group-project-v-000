@@ -41,7 +41,7 @@ class TweetsController < ApplicationController
      @tweet.save
      redirect '/tweets'
    else
-     redirect '/users/home'
+     redirect '/'
    end
   end
 end
