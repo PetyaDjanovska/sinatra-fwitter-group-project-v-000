@@ -25,7 +25,6 @@ class TweetsController < ApplicationController
     if logged_in? && @tweet.user_id == current_user.id
       erb :'/tweets/edit'
     else
-      flash[:message] = "Not allowed to edit, sorry!"
       redirect '/tweets'
     end
   end
