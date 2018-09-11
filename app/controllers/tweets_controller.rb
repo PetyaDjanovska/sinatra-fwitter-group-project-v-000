@@ -26,7 +26,7 @@ class TweetsController < ApplicationController
       erb :'/tweets/edit'
     else
       flash[:message] = "Not allowed to edit, sorry!"
-      redirect '/users/home'
+      redirect '/tweets'
     end
   end
 end
