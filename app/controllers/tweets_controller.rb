@@ -9,7 +9,7 @@ class TweetsController < ApplicationController
       @tweet = Tweet.new(params[:tweet])
       @tweet.user_id = current_user.id
       @tweet.save
-      redirect_to '/tweets'
+      redirect_to '/tweets/:id'
     end
   end
 
